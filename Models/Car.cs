@@ -1,5 +1,7 @@
 
 
+using System;
+
 namespace GregsListDotNet.Models
 {
   public class Car
@@ -11,12 +13,14 @@ namespace GregsListDotNet.Models
       Model = model;
       Price = price;
       Year = year;
+      Id = Guid.NewGuid().ToString();
     }
 
     public string Make { get; set; }
     public string Model { get; set; }
     public int Price { get; set; }
     public int Year { get; set; }
+    public string Id { get; set; }
 
   }
 }
