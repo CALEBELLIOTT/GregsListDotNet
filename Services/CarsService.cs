@@ -29,6 +29,15 @@ namespace GregsListDotNet.Services
       FakeDb.Cars.Add(carData);
       return carData;
     }
+
+    internal Car editCar(Car carData, string id)
+    {
+      Car found = getById(id);
+      found.Make = carData.Make ?? found.Make;
+      found.Model = carData.Model ?? found.Model;
+      found.Price = carData.Price;
+      return found;
+    }
   }
 
 }

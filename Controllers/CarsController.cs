@@ -61,5 +61,19 @@ namespace GregsListDotNet.Controllers
         return BadRequest(e.Message);
       }
     }
+
+    [HttpPut("{id}")]
+    public ActionResult<Car> editCar([FromBody] Car carData, string id)
+    {
+      try
+      {
+        Car updated = _cs.editCar(carData, id);
+        return Ok(updated);
+      }
+      catch (System.Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
   }
 }
